@@ -1,0 +1,63 @@
+.weather {
+  height: 250px;
+  .autocomplete-container {
+    color: inherit;
+  }
+
+  .weather-display {
+    margin: 20px;
+    align-items: center;
+    height: 80%;
+    overflow: scroll;
+    img {
+      height: 100px;
+      width: auto;
+    }
+  }
+
+  .search {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .search input {
+    flex-grow: 1;
+    font-size: 14px;
+    padding: 4px;
+    border: 1px solid black;
+  }
+
+  .search button {
+    margin-left: 4px;
+  }
+
+  .results {
+    background: #eeeeee;
+    max-height: 200px;
+    overflow-y: scroll;
+  }
+
+  .results-count {
+    font-weight: bold;
+  }
+
+  .result,
+  .results-count {
+    padding: 10px;
+  }
+
+  .result {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .result:hover {
+    color: purple;
+  }
+
+  .display div {
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+  }
+}
