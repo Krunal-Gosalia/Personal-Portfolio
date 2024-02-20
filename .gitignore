@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+tailwind.config.js
+settings.json
+eslint.config.js
 
 # testing
 /coverage
