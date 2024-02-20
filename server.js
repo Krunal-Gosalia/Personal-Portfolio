@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+require("dotenv").config({ 'path': '.env.local' });
+const PORT = process.env.PORT || 8000;
+
 // const mongoose = require("mongoose");
 
 // server used to send send emails
@@ -15,10 +18,10 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json());
+// app.use(bodyParser.json());
+
 app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
-console.log(process.env.REACT_APP_EMAIL_USER);
-console.log(process.env.REACT_APP_EMAIL_PASS);
+app.listen(PORT, () => console.log(`Server Running on port ${PORT}`));
 
 // main().catch(err => console.log(err));
 
@@ -29,8 +32,8 @@ console.log(process.env.REACT_APP_EMAIL_PASS);
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "krunal57@gmail.com",
-    pass: "Kruni_1990"
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   },
 });
 
@@ -47,13 +50,15 @@ router.post("/", (req, res) => {
 })
 
 router.post("/contact", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   const name = req.body.firstName + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
   const phone = req.body.phone;
+
   const mail = {
     from: name,
-    to: process.env.REACT_APP_EMAIL_USER,
+    to: process.env.EMAIL_USER,
     subject: "Contact Form Submission - Portfolio",
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
@@ -61,7 +66,6 @@ router.post("/contact", (req, res) => {
            <p>Message: ${message}</p>`,
   };
 
-  res.json({ code: 200, status: "Message Sent" });
   contactEmail.sendMail(mail, (error) => {
     if (error) {
       res.json(error);

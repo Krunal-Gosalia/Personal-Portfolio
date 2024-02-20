@@ -25,10 +25,11 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
+    let response = await fetch("http://localhost:8000/contact", {
       method: "POST",
+      mode: "cors",
       headers: {
-        "Content-Type": "application/json;charset=utf-8",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formDetails),
     });
@@ -38,6 +39,7 @@ export const Contact = () => {
     if (result.code === 200) {
       setStatus({ succes: true, message: 'Message sent successfully' });
     } else {
+      console.log(result);
       setStatus({ succes: false, message: 'Something went wrong, please try again later.' });
     }
   };

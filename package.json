@@ -9,6 +9,7 @@
     "bootstrap": "^5.3.2",
     "config": "^3.3.11",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
     "env-cmd": "^10.1.0",
     "express": "^4.18.2",
     "framer-motion": "^11.0.3",
@@ -28,9 +29,9 @@
     "web-vitals": "^3.5.2"
   },
   "scripts": {
-    "start": "env-cmd -f .env.local react-scripts start",
+    "start": "PORT=3001 env-cmd -f .env.local  react-scripts start",
     "build:staging": "env-cmd -f .env.local react-scripts build",
-    "build": "env-cmd -f .env.production react-scripts build",
+    "build": "PORT=3001 env-cmd -f .env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
