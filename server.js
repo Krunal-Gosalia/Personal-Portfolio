@@ -30,7 +30,9 @@ app.listen(PORT, () => console.log(`Server Running on port ${PORT}`));
 // }
 
 const contactEmail = nodemailer.createTransport({
-  service: 'gmail',
+  host: process.env.IONOS_HOST,
+  port: process.env.IONOS_PORT,
+  requireTLS: true,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
@@ -51,14 +53,14 @@ router.post("/", (req, res) => {
 
 router.post("/contact", (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  const name = req.body.firstName + req.body.lastName;
+  const name = req.body.firstName + " " + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
   const phone = req.body.phone;
 
   const mail = {
-    from: name,
-    to: process.env.EMAIL_USER,
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_FORWARD,
     subject: "Contact Form Submission - Portfolio",
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
