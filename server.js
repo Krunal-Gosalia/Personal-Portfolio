@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-require("dotenv").config({ 'path': '.env.local' });
+require("dotenv").config({ 'path': ['.env.local', 'env.local'] });
 const PORT = process.env.PORT || 8000;
 
 // const mongoose = require("mongoose");
