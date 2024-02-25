@@ -47,8 +47,6 @@ jobs:
         run: |
           npm ci
           npm run build
-          npm install serve
-          serve -s build
 
 # Please do not touch the following action
       - name: Store deployment content
