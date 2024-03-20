@@ -19,7 +19,7 @@ env:
 jobs:
 # Please do not rename this job
   build-project:
-    name: build Personal-Portfolio
+    name: build Personal Portfolio
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -38,8 +38,8 @@ jobs:
           EMAIL_FORWARD: ${{ secrets.EMAIL_FORWARD }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
-          IONOS_HOST: ${{ secrets.IONOS_HOST }}
-          IONOS_PORT: ${{ secrets.IONOS_PORT }}
+          IONOS_HOST: smtp.ionos.com
+          IONOS_PORT: 465
           PORT: ${{ secrets.PORT }}
           REACT_APP_GOOGLE_API_KEY: ${{ secrets.REACT_APP_GOOGLE_API_KEY }}
           REACT_APP_WEATHER_APP_API_KEY: ${{ secrets.REACT_APP_WEATHER_APP_API_KEY }}
@@ -54,9 +54,9 @@ jobs:
         with:
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-us.ionos.space
-          project-id: ad3ed74a-1b12-4a5e-8742-d793db1426c7
+          project-id: d2a51e36-27fb-4df3-b7e8-a52d1bf9c405
           branch-id: ${{ inputs.branch-id }}
           version: ${{ github.sha }}
           folder: ${{ env.DEPLOYMENT_FOLDER }}
-          config-file: .deploy-now/Personal-Portfolio/config.yaml
+          config-file: .deploy-now/Personal Portfolio/config.yaml
           action: upload
