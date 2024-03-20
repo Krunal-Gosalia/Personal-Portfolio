@@ -463,6 +463,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -1;
   transition: 0.3s ease-in-out;
 }
+
+/* .resume .nav.nav-pills .nav-link span {
+  padding-left: 8px;
+} */
+
 .resume .nav.nav-pills .nav-link.active::before {
   width: 100% !important;
 }
