@@ -18,13 +18,13 @@ export const Resume = () => {
               <Tab.Container id="resume-tabs" defaultActiveKey="skills">
                 <Nav variant="pills" className="nav-pills mb-3 justify-content-center align-items-center" id="pills-tab">
                   <Nav.Item>
-                    <Nav.Link eventKey="experience"><BriefcaseFill className="mr-2 inline-flex" size={18} />Experience</Nav.Link>
+                    <Nav.Link eventKey="experience"><BriefcaseFill className="ml-4 inline-flex" size={18} />Experience</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="skills"><CodeSlash className="mr-2 inline-flex" size={18} />Skills</Nav.Link>
+                    <Nav.Link eventKey="skills"><CodeSlash className="mr-4 inline-flex" size={18} />Skills</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="projects"><GraphUpArrow className="mr-2 inline-flex" size={18} />Projects</Nav.Link>
+                    <Nav.Link eventKey="projects"><GraphUpArrow className="mr-4 inline-flex" size={18} />Projects</Nav.Link>
                   </Nav.Item>
                 </Nav>
                 <Tab.Content id="slideInUp">
