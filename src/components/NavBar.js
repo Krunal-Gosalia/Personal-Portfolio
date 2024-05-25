@@ -49,9 +49,9 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/in/krunalgosalia/"><img src={navIcon1} alt="LinkedIn Icon" /></a>
-                <a href="https://github.com/Krunal-Gosalia"><img src={navIcon2} alt="Github Icon" /></a>
-                <a href="https://jsfiddle.net/user/krunal57/fiddles/"><img src={navIcon3} alt="JS-Fiddle Icon" /></a>
+                <a href="https://www.linkedin.com/in/krunalgosalia/" target="_blank" rel="noreferrer"><img src={navIcon1} alt="LinkedIn Icon" /></a>
+                <a href="https://github.com/Krunal-Gosalia" target="_blank" rel="noreferrer"><img src={navIcon2} alt="Github Icon" /></a>
+                <a href="https://jsfiddle.net/user/krunal57/fiddles/" target="_blank" rel="noreferrer"><img src={navIcon3} alt="JS-Fiddle Icon" /></a>
               </div>
             </span>
           </Navbar.Collapse>

@@ -1,63 +1,68 @@
-import { motion } from 'framer-motion';
-import ResumeCard from './ResumeCard';
+import { Container, Row, Col } from "react-bootstrap";
+import { MortarboardFill, BriefcaseFill } from 'react-bootstrap-icons';
 
 const EducationAndExperience = () => {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.5 } }}
-      className="w-full flex flex-col lgl:flex-row gap-10 lgl:gap-20"
-    >
-      {/* part one */}
-      <div>
-        <div className="py-6 font-titleFont flex flex-col gap-4">
-          <h3 className="font-bold">Educational Qualification</h3>
-        </div>
-        <div className="mt-6 lgl:mt-6 w-full h-[400px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
-          <ResumeCard
-            title="Masters Of Science"
-            subTitle="University Of North Carolina at Charlotte"
-            result="3.8 GPA"
-            heightRatio="h-1/2"
-          />
-          <ResumeCard
-            title="Bachelor Of Engineering"
-            subTitle="University Of Mumbai"
-            result="1st Class"
-            heightRatio="h-1/2"
-          />
-        </div>
-      </div>
-      {/* part Two */}
-
-      <div>
-        <div className="py-6 font-titleFont flex flex-col gap-4">
-          <h3 className="font-bold">Job Experience</h3>
-        </div>
-        <div className="mt-6 w-full h-[600px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
-          <ResumeCard
-            title="Sr. Consultant - Full Stack Developer"
-            subTitle="Deloitte - (2017-Present)"
-            result="USA"
-            heightRatio="h-1/3"
-
-          />
-          <ResumeCard
-            title="Performance Engineer Consultant"
-            subTitle="Accenture - (2013 - 2015)"
-            result="India"
-            heightRatio="h-1/3"
-          />
-          <ResumeCard
-            title="Software Developer Analyst"
-            subTitle="Infini Systems - (2012 - 2013)"
-            result="India"
-            heightRatio="h-1/3"
-          />
-        </div>
-      </div>
-    </motion.div>
-  );
+  return (<div class="section-padding">
+    <Container>
+      <Row>
+        <Col lg={6} md={6} sm={6}>
+          <div class="education wow fadeInRight" data-wow-delay="0.3s">
+            <ul class="timeline">
+              <li>
+                <i class="icon-graduation"><MortarboardFill size={24} /></i>
+                <h2 class="timelin-title">Education</h2>
+              </li>
+              <li className="box">
+                <div class="content-text">
+                  <h3 class="line-title">Masters of Science</h3>
+                  <span>Aug 2015 - Dec 2016</span>
+                  <p class="line-text">University Of North Carolina at Charlotte</p>
+                </div>
+              </li>
+              <li className="box">
+                <div class="content-text">
+                  <h3 class="line-title">Bachelor of Engineering</h3>
+                  <span>2009 - 2012</span>
+                  <p class="line-text">University of Mumbai</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </Col>
+        <Col lg={6} md={6} sm={6}>
+          <div class="experience wow fadeInRight" data-wow-delay="0.6s">
+            <ul class="timeline">
+              <li>
+                <i class="icon-briefcase"><BriefcaseFill size={24} /></i>
+                <h2 class="timelin-title">Experience</h2>
+              </li>
+              <li className="box">
+                <div class="content-text">
+                  <h3 class="line-title">Sr. Consultant - Full Stack Developer</h3>
+                  <span>Jan 2018 - Present</span>
+                  <p class="line-text">Deloitte US</p>
+                </div>
+              </li>
+              <li className="box">
+                <div class="content-text">
+                  <h3 class="line-title">Performance Test Engineer Consultant</h3>
+                  <span>Feb 2013 - July 2015</span>
+                  <p class="line-text">Accenture</p>
+                </div>
+              </li>
+              <li className="box">
+                <div class="content-text">
+                  <h3 class="line-title">Software Engineer</h3>
+                  <span>May 2012 - Jan 2013</span>
+                  <p class="line-text">Infini Systems</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  </div>)
 }
 
 export default EducationAndExperience

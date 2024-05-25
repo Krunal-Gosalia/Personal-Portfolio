@@ -7,7 +7,7 @@ import { BriefcaseFill, CodeSlash, GraphUpArrow } from 'react-bootstrap-icons';
 
 export const Resume = () => {
   return (
-    <section className="resume" id="Resume">
+    <section className="resume" id="skills">
       <Container>
         <Row>
           <Col size={12}>
