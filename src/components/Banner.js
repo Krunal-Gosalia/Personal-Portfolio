@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 
 export const Banner = () => {
@@ -60,7 +59,6 @@ export const Banner = () => {
                 <li>Led complex web-application development efforts, collaborate with cross-functional experts and designers to understand pain-points, implement and ship tools to troubleshoot and analyze bottlenecks in pipeline.</li>
                 <li>Set up and configure cloud env to deploy web-apps with optimial efficiency.</li>
               </ul>
-              <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
             </div>
           </Col>
         </Row>
