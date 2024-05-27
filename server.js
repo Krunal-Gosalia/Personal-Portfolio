@@ -29,10 +29,11 @@ app.listen(PORT, () => console.log(`Server Running on port ${PORT}`));
 //   await mongoose.connect('mongodb://127.0.0.1:27017/likesdb');
 // }
 
+// host: process.env.HOST,
+// port: process.env.PORT,
+// requireTLS: true,
 const contactEmail = nodemailer.createTransport({
-  host: process.env.IONOS_HOST,
-  port: process.env.IONOS_PORT,
-  requireTLS: true,
+  service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
@@ -59,8 +60,8 @@ router.post("/contact", (req, res) => {
   const phone = req.body.phone;
 
   const mail = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_FORWARD,
+    from: name,
+    to: process.env.EMAIL_USER,
     subject: "Contact Form Submission - Portfolio",
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
