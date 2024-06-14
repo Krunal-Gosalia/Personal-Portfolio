@@ -44,6 +44,6 @@ export const Resume = () => {
           </Col>
         </Row>
       </Container>
-    </section >
+    </section>
   )
 }

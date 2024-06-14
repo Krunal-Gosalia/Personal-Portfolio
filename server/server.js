@@ -18,7 +18,6 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json());
-// app.use(bodyParser.json());
 
 app.use("/", router);
 app.listen(PORT, () => console.log(`Server Running on port ${PORT}`));
@@ -40,16 +39,22 @@ const contactEmail = nodemailer.createTransport({
   },
 });
 
-contactEmail.verify((error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Ready to Send");
-  }
-});
+router.get("/", (req, res) => {
+  res.send(`Server Running on port ${PORT}`);
+})
 
-router.post("/", (req, res) => {
-  res.send("This has CORS enabled");
+router.get("/test", (req, res) => {
+  res.send(`Test is successful`);
+})
+
+router.get("/testEmail", (req, res) => {
+  contactEmail.verify((error) => {
+    if (error) {
+      res.json(error);
+    } else {
+      res.send("Ready to Send");
+    }
+  });
 })
 
 router.post("/contact", (req, res) => {

@@ -48,7 +48,7 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="align-items-center justify-content-center">
+        <Row className="justify-content-center">
           <Col size={20} md={10}>
             <div className="content">
               <span className="tagline">Welcome to my Portfolio</span>

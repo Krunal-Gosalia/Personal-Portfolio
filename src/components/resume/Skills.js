@@ -20,7 +20,7 @@ const Skills = () => {
   const SkillSection = ({ skills }) =>
     <Row className='d-flex justify-content-center'>
       {skills.map((skill) =>
-        <Col key={skill} lg={1} md={2} sm={3} xs={4} className="skill-card bg-white bg-opacity-10 m-2 p-2 ">
+        <Col key={skill} lg={1} md={2} xs={3} className="skill-card bg-white bg-opacity-10 m-2 p-2 ">
           <img
             src={require(`../../assets/img/logos/${skill}.png`)}
             alt={skill}

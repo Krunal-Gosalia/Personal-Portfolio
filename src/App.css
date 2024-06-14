@@ -404,9 +404,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .skill-card img {
   height: 75px;
-  @media only screen and (max-width: 1080px) {
-    height: 100px;
-  }
 }
 
 .skill-text {
@@ -885,7 +882,7 @@ img.logo {
 
 .timeline li .line-title {
   font-size: 16px;
-  line-height: 6px;
+  text-overflow: ellipsis;
 }
 
 .timeline li span {
@@ -896,7 +893,11 @@ img.logo {
 
 .timeline li .line-text {
   color: white;
+  font-size: 18px;
   line-height: 18px;
+  @media (min-width: 1080px) {
+    font-size: 14px;
+  }
 }
 
 .timeline li:first-child:before {

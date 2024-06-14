@@ -5,7 +5,7 @@ const EducationAndExperience = () => {
   return (<div className="section-padding">
     <Container>
       <Row>
-        <Col lg={6} md={6} sm={6}>
+        <Col lg={6} md={6} sm={12}>
           <div className="education wow fadeInRight" data-wow-delay="0.3s">
             <ul className="timeline">
               <li>
@@ -29,7 +29,7 @@ const EducationAndExperience = () => {
             </ul>
           </div>
         </Col>
-        <Col lg={6} md={6} sm={6}>
+        <Col lg={6} md={6} sm={12}>
           <div className="experience wow fadeInRight" data-wow-delay="0.6s">
             <ul className="timeline">
               <li>
