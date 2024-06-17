@@ -1,20 +1,29 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectModal } from "./ProjectModal";
-import projImg2 from "../assets/img/second work.jpg";
+import weatherProjImg from "../assets/img/project/weather-proj.jpg";
+import aiDreamProjImg from "../assets/img/project/ai-dream-proj.jpg";
 import { useState } from "react";
 
 import Weather from "./projects/weather-app/weather";
+import Dream from "./projects/dream-openAI-app/dream";
 
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 
-const PROJECTS_MAP = new Map([["Weather_App", {
-  title: "Weather App - React",
-  description: "Enables weather search for cities in the United States",
-  imgUrl: projImg2,
-  component: <Weather />
-}]
+const PROJECTS_MAP = new Map([
+  ["Weather_App", {
+    title: "Weather App",
+    description: "Enables weather search for cities in the United States",
+    imgUrl: weatherProjImg,
+    component: <Weather />
+  }],
+  ["OpenAI_Dream_App", {
+    title: "OpenAI Dream Weaver",
+    description: "Analyze and visualize your dream",
+    imgUrl: aiDreamProjImg,
+    component: <Dream />
+  }]
 ]);
 
 const Projects = () => {
