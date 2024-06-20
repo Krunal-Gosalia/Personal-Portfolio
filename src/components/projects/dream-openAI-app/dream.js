@@ -50,7 +50,7 @@ function Dream() {
                     }
                 </Col>
                 <Col lg="4" sx="12" >
-                    {imageUrl && <img src={imageUrl} className='py-4' alt="Loaded" />}
+                    {imageUrl && <img src={imageUrl} className='py-4 dream-img' alt="Loaded" />}
                 </Col>
 
             </Row>

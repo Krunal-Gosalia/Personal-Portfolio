@@ -12,7 +12,7 @@ export const Banner = () => {
   const period = 1000;
 
   useEffect(() => {
-    const toRotate = ["Web Developer", "Web Architect", "Team Leader"];
+    const toRotate = ["Developer", "Solution Architect", "Master"];
     const tick = () => {
       let i = loopNum % toRotate.length;
       let fullText = toRotate[i];
@@ -52,7 +52,7 @@ export const Banner = () => {
           <Col size={20} md={10}>
             <div className="content">
               <span className="tagline">Welcome to my Portfolio</span>
-              <h2>{`Hi! I'm Krunal`} <span className="txt-rotate" data-rotate='[ "Web Developer", "Performance Engineer", "Team Leader" ]'><span className="wrap">{text}</span></span></h2>
+              <h2>{`Hi! I'm Krunal Web`} <span className="txt-rotate" data-rotate='["Developer", "Solution Architect", "Master"]'><span className="wrap">{text}</span></span></h2>
               <ul>
                 <li>Specialize to build innovative data analytics and visualization apps for clients to provide insights.
                 </li>

@@ -28,14 +28,23 @@ app.listen(PORT, () => console.log(`Server Running on port ${PORT}`));
 //   await mongoose.connect('mongodb://127.0.0.1:27017/likesdb');
 // }
 
-// host: process.env.HOST,
-// port: process.env.PORT,
-// requireTLS: true,
+const NODE_MAILER_ID = `${process.env.NODEMAILER_USERNAME}@${process.env.NODEMAILER_DOMAIN}.com`;
+
+// const contactEmail = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: NODE_MAILER_ID,
+//     pass: process.env.NODEMAILER_PASS
+//   },
+// });
+
 const contactEmail = nodemailer.createTransport({
-  service: 'gmail',
+  host: process.env.NODEMAILER_HOST,
+  port: process.env.NODEMAILER_PORT,
+  secure: true,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
+    user: process.env.NODEMAILER_USERNAME,
+    pass: process.env.NODEMAILER_PASS
   },
 });
 
@@ -60,18 +69,18 @@ router.get("/testEmail", (req, res) => {
 router.post("/contact", (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   const name = req.body.firstName + " " + req.body.lastName;
-  const email = req.body.email;
+  const senderEmail = req.body.email;
   const message = req.body.message;
   const phone = req.body.phone;
 
   const mail = {
     from: name,
-    to: process.env.EMAIL_USER,
-    subject: "Contact Form Submission - Portfolio",
-    html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Phone: ${phone}</p>
-           <p>Message: ${message}</p>`,
+    to: NODE_MAILER_ID,
+    subject: "Krunal Portfolio - Contact Form Submission",
+    html: `<p> Name: ${name}</p>
+          <p>Email: ${senderEmail}</p>
+          <p>Phone: ${phone}</p>
+          <p>Message: ${message}</p>`,
   };
 
   contactEmail.sendMail(mail, (error) => {

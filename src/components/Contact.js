@@ -27,7 +27,7 @@ export const Contact = () => {
     e.preventDefault();
     setButtonText("Sending...");
     try {
-      let response = await fetch(`http://${process.env.REACT_APP_HOST}/contact`, {
+      let response = await fetch(`${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_HOST}/contact`, {
         method: "POST",
         mode: "cors",
         headers: {
