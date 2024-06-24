@@ -5,8 +5,6 @@ const nodemailer = require("nodemailer");
 require("dotenv").config({ 'path': ['.env.local', 'env.local'] });
 const PORT = process.env.PORT || 8000;
 
-// const mongoose = require("mongoose");
-
 // server used to send send emails
 const app = express();
 app.use(cors());
@@ -22,21 +20,8 @@ app.use(express.json());
 app.use("/", router);
 app.listen(PORT, () => console.log(`Server Running on port ${PORT}`));
 
-// main().catch(err => console.log(err));
-
-// async function main() {
-//   await mongoose.connect('mongodb://127.0.0.1:27017/likesdb');
-// }
 
 const NODE_MAILER_ID = `${process.env.NODEMAILER_USERNAME}@${process.env.NODEMAILER_DOMAIN}.com`;
-
-// const contactEmail = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: NODE_MAILER_ID,
-//     pass: process.env.NODEMAILER_PASS
-//   },
-// });
 
 const contactEmail = nodemailer.createTransport({
   host: process.env.NODEMAILER_HOST,

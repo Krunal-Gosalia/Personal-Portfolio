@@ -39,7 +39,7 @@ const EducationAndExperience = () => {
               <li className="box">
                 <div className="content-text">
                   <h3 className="line-title">Sr. Consultant - Full Stack Developer</h3>
-                  <span>Jan 2018 - Present</span>
+                  <span>Feb 2017 - Present</span>
                   <p className="line-text">Deloitte US</p>
                 </div>
               </li>

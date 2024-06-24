@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 
 const usersSchema = new Schema({
     email_id: String,
-    date: { type: Date, default: Date.now },
+    hash: String,
+    active: Boolean,
 })
 
 const likesSchema = new Schema({
